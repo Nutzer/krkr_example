@@ -1,0 +1,12 @@
+{
+  "73ad46d28db0ecf934abab98fdcaa2c90582bfc663a32cbfd09b3216b5b3d91b": {
+    // Fix font kerning by redrawing the entire message when the next character is shown.
+    "@11813,11813": "var last_dx = -1; var last_dy = -1; var org_dx = -1; var org_dy = -1; var org_msg = \"\";",
+    "@37622,37622": "pitch = 0; if (dx != last_dx || dy != last_dy) { org_msg = \"\"; org_dx = dx; org_dy = dy; } last_dy = dy; last_dx = dx + cw; org_msg = org_msg + ch; ll.fillRect(org_dx, org_dy, dx - org_dx, org_dy + llfont.height, 0);",
+    "@37653,37662": "org_dx, org_dy, org_msg", // render outline
+    "@37781,37790": "org_dx, org_dy, org_msg", // render shadow
+    "@37906,37915": "org_dx, org_dy, org_msg", // render default
+    "@22234,22234": "last_dx = last_dy = -1;", // break if font is reset
+    "@23211,23211": "last_dx = last_dy = -1;"  // break if font changes
+  }
+}

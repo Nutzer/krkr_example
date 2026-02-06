@@ -1,0 +1,5 @@
+{
+  "a4fc5fac7eea16a67a7b7493f750476b3585eaeefe0cfb058d9abb2f8acc49ca": {
+    "@6412,6413": "51", // Height fix for character name in message box
+  }
+}

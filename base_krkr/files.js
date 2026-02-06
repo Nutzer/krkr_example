@@ -1,0 +1,15 @@
+{
+  "isokou/1 プロローグ.ks.jdiff": "3ae67162",
+  "isokou/logo.ks.jdiff": "f10d7775",
+  "isokou/strings.js": "f35de277",
+  "isokou/system/MessageLayer.tjs.jdiff": "82d656fe",
+  "isokou/macro.ks.jdiff": "29de14f2",
+  "patch.js": "9ab22435",
+  "versions.js": "0eeb2b13",
+  "gkt4.js": "f78d3dd3",
+  "gkt4/strings.js": "75d2bfa0",
+  "gkt4/first.ks.jdiff": "99a847a2",
+  "gkt4/system/MessageLayer.tjs.jdiff": "9cfcb922",
+  "gkt4/01_A1_非想逆転則.ks.jdiff": "504c9ac6",
+  "isokou.js": "f607424e",
+}

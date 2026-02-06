@@ -1,0 +1,6 @@
+{
+  "692af9ec26d64a16b0c99f808b4dd2a1ba5ca3493cc224e697cf4784ddd548b3": {
+    // [tlnote] macro
+    "@0,0": "\n[iscript]\nvar tl = new MessageLayer(kag, kag.fore.base); tl.setPos(0, 0); function tlnote(head, note) {tl.clear(); tl.visible=true; tl.edge = false; tl.shadow = false; tl.lineLayer.font.bold *= true; tl.lineLayer.font.height *= 1.2; tl.processCh(head); tl.y += tl.lineLayer.font.height * 0.2; tl.processReturn(); tl.resetFont(); tl.edge = false; tl.shadow = false; const lines = [].split(\"\\n\", note); for (var i = 0; i < lines.count; ++i) { tl.processCh(lines[i]); tl.processReturn(); }}\nfunction tlnote_end() {tl.visible=false;}\n[endscript]\n\n[macro name=\"tlnote\"][font color=\"0xa0a0ff\"][link onenter=%exec onleave=\"tlnote_end()\"][endmacro]\n[macro name=\"endtlnote\"][endlink][resetfont][endmacro]\n"
+  }
+}
