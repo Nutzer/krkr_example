@@ -1,12 +1,23 @@
 {
-  "73ad46d28db0ecf934abab98fdcaa2c90582bfc663a32cbfd09b3216b5b3d91b": {
+  "hash": "73ad46d28db0ecf934abab98fdcaa2c90582bfc663a32cbfd09b3216b5b3d91b",
+  "patches": {
     // Fix font kerning by redrawing the entire message when the next character is shown.
-    "@11813,11813": "var last_dx = -1; var last_dy = -1; var org_dx = -1; var org_dy = -1; var org_msg = \"\";",
-    "@37622,37622": "pitch = 0; if (dx != last_dx || dy != last_dy) { org_msg = \"\"; org_dx = dx; org_dy = dy; } last_dy = dy; last_dx = dx + cw; org_msg = org_msg + ch; ll.fillRect(org_dx, org_dy, dx - org_dx, org_dy + llfont.height, 0);",
-    "@37653,37662": "org_dx, org_dy, org_msg", // render outline
-    "@37781,37790": "org_dx, org_dy, org_msg", // render shadow
-    "@37906,37915": "org_dx, org_dy, org_msg", // render default
-    "@22234,22234": "last_dx = last_dy = -1;", // break if font is reset
-    "@23211,23211": "last_dx = last_dy = -1;"  // break if font changes
+    init_vars:      { start: 11813, content: "var last_dx = -1; var last_dy = -1; var org_dx = -1; var org_dy = -1; var org_msg = \"\";" },
+    render_normal:  { start: 37653, end: 37663, expected: "dx, dy, ch", content: "org_dx, org_dy, org_msg" }, // render normal
+    render_outline: { start: 37781, end: 37791, expected: "dx, dy, ch", content: "org_dx, org_dy, org_msg" }, // render outline
+    render_shadow:  { start: 37906, end: 37916, expected: "dx, dy, ch", content: "org_dx, org_dy, org_msg" }, // render shadow
+    font_reset:     { start: 22234, content: "last_dx = last_dy = -1;" }, // break if font is reset
+    font_set:       { start: 23211, content: "last_dx = last_dy = -1;" }, // break if font is reset
+    on_update_text: { start: 37622, content: "\
+pitch = 0; \
+if (dx != last_dx || dy != last_dy || ch == \" \") { \
+  org_msg = \"\"; \
+  org_dx = dx; \
+  org_dy = dy; \
+} \
+last_dy = dy; \
+last_dx = dx + cw; \
+org_msg = org_msg + ch; \
+ll.fillRect(org_dx, org_dy, dx - org_dx, org_dy + llfont.height, 0);" },
   }
 }

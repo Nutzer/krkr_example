@@ -1,5 +1,7 @@
 {
-  "68a67fc4bedf16cb3df7f804466b1fe0342aa5704806faf53320c28cefcc56ae": {
-    "@1041,1046": "[@reimu]",
+  patches: {
+    chname_1: { start: 1041, end: 1047, content: "[@reimu]"},
+    line_1: { start: 1059, end: 1202, content: "" },
   }
+  strings: "strings.js"
 }

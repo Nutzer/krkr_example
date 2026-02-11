@@ -4,7 +4,7 @@
   "isokou/strings.js": "f35de277",
   "isokou/system/MessageLayer.tjs.jdiff": "82d656fe",
   "isokou/macro.ks.jdiff": "29de14f2",
-  "patch.js": "9ab22435",
+  "patch.js": "5205fcbf",
   "versions.js": "0eeb2b13",
   "gkt4.js": "f78d3dd3",
   "gkt4/strings.js": "75d2bfa0",

@@ -2,7 +2,11 @@
 	"id": "lang_en",
 	"min_build": "0x20140528",
 	"servers": [
-		"https://github.com/Nutzer/krkr_example/lang_en/"
+		"https://example.org/krkr_example/lang_en/"
+	],
+	"supported_games": [
+		"isokou",
+		"gkt4"
 	],
 	"thcrap_version_min": "0x20191214",
 	"title": "Example English Language Support",

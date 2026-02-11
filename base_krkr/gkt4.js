@@ -4,32 +4,26 @@
 	"latest": [
 		"v1.00a",
 	],
-	"binhacks.disable": {
+	"binhacks": {
 		"disable_bitmap_fonts": {
-			"code": "31c0 5f 5e 5b c3",
 			"addr": "Rx1157a3"
+		},
+		"fix_create_window_nullptr": {
+			"addr": "Rxbe144"
 		},
 	},
 	"breakpoints": {
-		"patchtjs": {
+		"patch_script#tjs": {
 			"addr": "Rx26b709",
-			"cavesize": 6,
-			"cave_exec": true,
 		},
-		"patchks": {
+		"patch_script#ks": {
 			"addr": "Rx1c7a0e",
-			"cavesize": 6,
-			"cave_exec": true,
 		},
 		"string_free": {
 			"addr": "Rx0088bf",
-			"cavesize": 6,
-			"cave_exec": true,
 		},
-		"patchimage": {
+		"patch_image": {
 			"addr": "Rx124fc1",
-			"cavesize": 7,
-			"cave_exec": true,
 		},
 	},
 	"fontrules": {

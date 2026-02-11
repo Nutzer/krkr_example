@@ -1,5 +1,5 @@
 {
-  "68a67fc4bedf16cb3df7f804466b1fe0342aa5704806faf53320c28cefcc56ae": {
-    "@1059,1202": "„Hallöchen, [tlnote exec=\"tlnote('AVATAR', 'This word is here to show that font kerning actually works now.\\nCan you see how the A and the Vs overlap?')\"]AVATAR[endtlnote]!“"
+  "patches": {
+    line_1: { content: "„Hallöchen, [tlnote exec=\"tlnote('AVATAR', 'This word is here to show that font kerning actually works now.\\nCan you see how the A and the Vs overlap?')\"]AVATAR[endtlnote]!“" },
   }
 }

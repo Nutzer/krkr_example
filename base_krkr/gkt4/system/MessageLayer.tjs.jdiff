@@ -1,12 +1,23 @@
 {
-  "8c2e1523f526f8586385d7b78349aa859ba579cbfeb8eda5c15d582176ad67f6": {
+  hash: "8c2e1523f526f8586385d7b78349aa859ba579cbfeb8eda5c15d582176ad67f6"
+  patches: {
     // Fix font kerning by redrawing the entire message when the next character is shown.
-    "@9800,9800": "var last_dx = -1; var last_dy = -1; var org_dx = -1; var org_dy = -1; var org_msg = \"\";",
-    "@33209,33209": "pitch = 0; if (dx != last_dx || dy != last_dy) { org_msg = \"\"; org_dx = dx; org_dy = dy; } last_dy = dy; last_dx = dx + cw; org_msg = org_msg + ch; ll.fillRect(org_dx, org_dy, dx - org_dx, org_dy + llfont.height, 0);",
-    "@33240,33249": "org_dx, org_dy, org_msg", // render outline
-    "@33368,33377": "org_dx, org_dy, org_msg", // render shadow
-    "@33469,33478": "org_dx, org_dy, org_msg", // render default
-    "@17821,17821": "last_dx = last_dy = -1;", // break if font is reset
-    "@18798,18798": "last_dx = last_dy = -1;"  // break if font changes
-  }
+    init_vars:      { start: 9800, content: "var last_dx = -1; var last_dy = -1; var org_dx = -1; var org_dy = -1; var org_msg = \"\";" },
+    render_normal:  { start: 33240, end: 33250, expected: "dx, dy, ch", content: "org_dx, org_dy, org_msg" }, // render normal
+    render_outline: { start: 33368, end: 33378, expected: "dx, dy, ch", content: "org_dx, org_dy, org_msg" }, // render outline
+    render_shadow:  { start: 33469, end: 33479, expected: "dx, dy, ch", content: "org_dx, org_dy, org_msg" }, // render shadow
+    font_reset:     { start: 17821, content: "last_dx = last_dy = -1;" }, // break if font is reset
+    font_set:       { start: 18798, content: "last_dx = last_dy = -1;" }, // break if font is reset
+    on_update_text: { start: 33209, content: "\
+pitch = 0; \
+if (dx != last_dx || dy != last_dy || ch == \" \") { \
+  org_msg = \"\"; \
+  org_dx = dx; \
+  org_dy = dy; \
+} \
+last_dy = dy; \
+last_dx = dx + cw; \
+org_msg = org_msg + ch; \
+ll.fillRect(org_dx, org_dy, dx - org_dx, org_dy + llfont.height, 0);" },
+  },
 }
