@@ -1,7 +1,7 @@
 {
   patches: {
     chname_1: { start: 1041, end: 1047, content: "[@reimu]"},
-    line_1: { start: 1059, end: 1202, content: "" },
-  }
+    line_1: { start: 1059, end: 1203, content: "" },
+  },
   strings: "strings.js"
 }

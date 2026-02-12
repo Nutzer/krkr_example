@@ -1,5 +1,5 @@
 {
-  hash: "8c2e1523f526f8586385d7b78349aa859ba579cbfeb8eda5c15d582176ad67f6"
+  hash: "8c2e1523f526f8586385d7b78349aa859ba579cbfeb8eda5c15d582176ad67f6",
   patches: {
     // Fix font kerning by redrawing the entire message when the next character is shown.
     init_vars:      { start: 9800, content: "var last_dx = -1; var last_dy = -1; var org_dx = -1; var org_dy = -1; var org_msg = \"\";" },
